@@ -4,7 +4,7 @@ import torch, torch.nn as nn, torch.optim as optim
 from torchvision import datasets, transforms
 import time
 
-start_time = time.perf_counter()
+
 
 # ------------------------------------------------------------------
 # 0️⃣  Safe start-method for DataLoader workers
@@ -80,6 +80,7 @@ class Net(nn.Module):
 # 5️⃣  Main training loop
 # ------------------------------------------------------------------
 def main():
+    start_time = time.perf_counter()
     train_loader = get_loader()
 
     model   = Net().to(dev)
