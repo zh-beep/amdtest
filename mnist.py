@@ -101,7 +101,7 @@ def main():
 
         print(f"Epoch {epoch}: loss={running_loss/len(train_loader.dataset):.4f}")
 
-    end_time = time.perf_counter
+    end_time = time.perf_counter()
     full = end_time - start_time
     print(f"\n✔ Done on {dev}! Your tiny net finished training in {full}.")
 
