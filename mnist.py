@@ -2,6 +2,9 @@
 import os, multiprocessing as mp
 import torch, torch.nn as nn, torch.optim as optim
 from torchvision import datasets, transforms
+import time
+
+start_time = time.perf_counter()
 
 # ------------------------------------------------------------------
 # 0️⃣  Safe start-method for DataLoader workers
@@ -98,7 +101,9 @@ def main():
 
         print(f"Epoch {epoch}: loss={running_loss/len(train_loader.dataset):.4f}")
 
-    print(f"\n✔ Done on {dev}! Your tiny net finished training.")
+    end_time = time.perf_counter
+    full = end_time - start_time
+    print(f"\n✔ Done on {dev}! Your tiny net finished training in {full}.")
 
 # ------------------------------------------------------------------
 # 6️⃣  Python entry-point guard
